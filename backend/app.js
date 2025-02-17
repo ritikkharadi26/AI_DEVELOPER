@@ -18,8 +18,10 @@ const allowedOrigins = [
   
   app.use(
     cors({
-      origin: allowedOrigins,
-      credentials: true,
+       origin: allowedOrigins,
+       methods: 'GET,POST,PUT,DELETE', // Specify allowed methods
+       allowedHeaders: 'Content-Type,Authorization',
+       credentials: true,
     })
   );
 app.use(morgan('dev'));
