@@ -10,11 +10,13 @@ import { generateResult } from './services/ai.js';
 const port = process.env.PORT || 3000;
 
 const server = http.createServer(app);
+
 const io = new Server(server, {
     cors: {
         origin: '*'
     }
 });
+
 
 // Socket middleware for authentication
 io.use(async (socket, next) => {
