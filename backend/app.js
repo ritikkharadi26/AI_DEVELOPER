@@ -10,16 +10,17 @@ import cors from 'cors';
 connect();
 
 const app=express();
-
-const allowedOrigins = [
-    process.env.FRONTEND_URL_LOCAL,
-    process.env.FRONTEND_URL_PROD
-  ];
+console.log(" process.env.FRONTEND_URL_LOCAL", process.env.FRONTEND_URL_LOCAL);
+// const allowedOrigins = [
+//     process.env.FRONTEND_URL_LOCAL,
+//     process.env.FRONTEND_URL_PROD
+//   ];
   
   app.use(
     cors({
-       origin: allowedOrigins,
-       methods: 'GET,POST,PUT,DELETE', // Specify allowed methods
+      //  origin: allowedOrigins,
+      origin:'*',
+      methods: 'GET,POST,PUT,DELETE', // Specify allowed methods
        allowedHeaders: 'Content-Type,Authorization',
        credentials: true,
     })
